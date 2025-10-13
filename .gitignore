@@ -1,0 +1,4 @@
+.idea
+audio_collection/.idea
+audio_collection/.venv
+**/__pycache__/

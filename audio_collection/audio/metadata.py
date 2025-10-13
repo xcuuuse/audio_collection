@@ -1,5 +1,5 @@
 class Genre:
-    def __init__(self, name: str): # 10
+    def __init__(self, name: str):
         self.__name = name
 
     @property
