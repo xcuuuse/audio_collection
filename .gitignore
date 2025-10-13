@@ -1,4 +1,3 @@
-.idea
-audio_collection/.idea
+.idea/
 audio_collection/.venv
 **/__pycache__/
