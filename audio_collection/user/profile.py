@@ -1,6 +1,11 @@
+from user.user import User
+
+
 class UserProfile:
-    pass
+    def __init__(self, user: User, registration_date: str):
+        pass
 
 
 class UserPreference:
     pass
+

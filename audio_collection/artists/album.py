@@ -7,7 +7,7 @@ class Album:
         self.__title = title
         self.__year = year
         self.__artist = artist
-        self.__genre = Genre
+        self.__genre = genre
 
     @property
     def title(self):
@@ -23,7 +23,7 @@ class Album:
 
     @property
     def genre(self):
-        return self.__genre.name
+        return self.__genre
 
 
 class Band(Artist):

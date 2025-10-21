@@ -2,7 +2,7 @@ from audio.base import AudioFile
 from audio.formats import AudioFormat
 from artists.artist import Artist
 from artists.album import Album
-from audio.metadata import Genre
+from audio.metadata import Genre, Tag
 
 
 class Track(AudioFile):
@@ -14,9 +14,17 @@ class Track(AudioFile):
         self.album = album
         self.year = album.year
         self.genre = album.genre
+        self.tag = None
 
     def get_info(self):
-        return f"{self.title}({self.artist.name}) | {self.album.title} | {self.year}"
+        return \
+            (f"{self.title}({self.artist.name}) | {self.album.title} | {self.year} | {self.genre.name} |"
+             f" {self.tag.name if self.tag else ""}")
+
+    def add_tag(self, tag: Tag):
+        self.tag = tag
+
+
 
 
 class Podcast(AudioFile):

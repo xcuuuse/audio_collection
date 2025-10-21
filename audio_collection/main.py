@@ -1,8 +1,10 @@
 from audio.base import AudioFormat, AudioFile, Converter
 from artists.artist import Artist
 from artists.album import Album
-from audio.metadata import Genre
+from audio.metadata import Genre, Tag
 from tracks.track import Track, LiveRecording
+from user.user import User, Authentication
+from user.authentication import Password, Username
 form = AudioFormat(".wav")
 form2 = AudioFormat(".flac")
 file = AudioFile("e:/numb.wav", 183, form, 1024)
@@ -17,5 +19,6 @@ album = Album("Meteora", 2003, artist, genres[0])
 # maybe do the logic of file size changing
 track = Track("e:/numb.wav", 183, form, 1024,
               "Numb", artist, album)
-live = LiveRecording("e:/numb.wav", 183, form, 1024, artist, track, 2004)
-print(live.get_info())
+print(track.get_info())
+track.add_tag(Tag("metal"))
+print(track.get_info())
