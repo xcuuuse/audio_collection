@@ -26,10 +26,10 @@ class User:
         return self.__playlists
 
 
-
 class PremiumUser(User):
-    def __init__(self, username: Username, email: str, password: Password, start_subscription: int):
-        super().__init__(username, email, password)
+    def __init__(self, username: Username, email: str, password: Password, playlists: list[Playlist],
+                 start_subscription: int):
+        super().__init__(username, email, password, playlists)
         self.__start_subscription = start_subscription
 
     @property
@@ -44,7 +44,19 @@ class PremiumUser(User):
 
 
 class GuestUser(User):
-    pass
+    def __init__(self, username: Username, email: str, password: Password, playlists: list[Playlist],
+                 session_id: str, access_level: str):
+        super().__init__(username, email, password, playlists)
+        self.__session_id = session_id
+        self.__access_level = access_level
+
+    @property
+    def session_id(self):
+        return self.__session_id
+
+    @property
+    def access_level(self):
+        return self.__access_level
 
 
 class Authentication:

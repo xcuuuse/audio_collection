@@ -27,7 +27,6 @@ class AudioFile:
     def set_format(self, form: AudioFormat):
         self.__audio_format = form
 
-
     def get_duration_formated(self):
         minutes = self.duration // 60
         seconds = self.duration - ((self.duration // 60) * 60)

@@ -25,8 +25,6 @@ class Track(AudioFile):
         self.tag = tag
 
 
-
-
 class Podcast(AudioFile):
     def __init__(self, path: str, duration: int, audio_format: AudioFormat, size: int,
                  podcaster: str, episode: int, title: str):

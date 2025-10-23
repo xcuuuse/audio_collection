@@ -3,8 +3,7 @@ from artists.artist import Artist
 from artists.album import Album
 from audio.metadata import Genre, Tag
 from tracks.track import Track, LiveRecording
-from user.user import User, Authentication
-from user.authentication import Password, Username
+from player.player import Player, AudioOutput
 form = AudioFormat(".wav")
 form2 = AudioFormat(".flac")
 file = AudioFile("e:/numb.wav", 183, form, 1024)
@@ -22,3 +21,10 @@ track = Track("e:/numb.wav", 183, form, 1024,
 print(track.get_info())
 track.add_tag(Tag("metal"))
 print(track.get_info())
+
+device = AudioOutput("headphones")
+
+player = Player(track, device)
+
+player.play(track)
+player.play(track)

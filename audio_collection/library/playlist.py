@@ -20,15 +20,43 @@ class Playlist:
     def tracks(self):
         return self.__tracks
 
-    """def add_track(self, path: str, duration: int, audio_format: AudioFormat, size: int,
-                 title: str, artist: Artist, album: Album):
-        self.__tracks.append(track) """
+    def add_track(self, track: Track):
+        self.__tracks.append(track)
+
+    def remove_track(self, track: Track):
+        self.__tracks.remove(track)
 
 
-class SmartPlaylist:
-    pass
+class SmartPlaylist(Playlist):
+    def __init__(self, name: str, user: User,
+                 criteria: dict):
+        super().__init__(name, user)
+        self.__criteria = criteria
+
+    @property
+    def criteria(self):
+        return self.__criteria
+
+    def update_tracks(self):
+        pass
 
 
 class PlaylistManager:
-    pass
+    def __init__(self, name: str, user: User):
+        self.__name = name
+        self.__user = user
+
+    @property
+    def name(self):
+        return self.__name
+
+    @property
+    def user(self):
+        return self.__user
+
+    @staticmethod
+    def create_playlist(name: str, user: User):
+        return Playlist(name, user)
+
+
 
